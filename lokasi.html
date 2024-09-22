@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koordinat Lokasi Anda</title>
+</head>
+<body>
+
+    <h1>Lokasi Anda:</h1>
+    <p id="koordinat"></p>
+
+    <script>
+        // Mendapatkan parameter URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const lat = urlParams.get('lat');
+        const long = urlParams.get('long');
+
+        // Menampilkan koordinat
+        if (lat && long) {
+            document.getElementById('koordinat').textContent = `Latitude: ${lat}, Longitude: ${long}`;
+        } else {
+            document.getElementById('koordinat').textContent = "Koordinat tidak tersedia.";
+        }
+    </script>
+
+</body>
+</html>
